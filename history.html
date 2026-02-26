@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Prediction History</h2>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th>Name</th><th>Loan Status</th><th>Risk Level</th><th>Probability</th><th>Timestamp</th>
+</tr>
+</thead>
+<tbody>
+{% for pred in predictions %}
+<tr>
+<td>{{ pred.applicant_name }}</td>
+<td>{{ pred.loan_status }}</td>
+<td>{{ pred.risk_level }}</td>
+<td>{{ (pred.probability*100)|round(2) }}%</td>
+<td>{{ pred.timestamp }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock %}

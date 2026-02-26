@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Loan Prediction Result</h2>
+
+<p><strong>Applicant Name:</strong> {{ prediction.applicant_name }}</p>
+<p><strong>Loan Status:</strong> {{ prediction.loan_status }}</p>
+<p><strong>Risk Level:</strong> {{ prediction.risk_level }}</p>
+<p><strong>Probability:</strong> {{ prediction.probability }}</p>
+
+<a href="{{ url_for('dashboard') }}" class="btn btn-primary">Back to Dashboard</a>
+{% endblock %}
